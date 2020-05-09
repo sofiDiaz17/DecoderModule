@@ -22,10 +22,14 @@ def decodes(code,advancekey):
 		if char_to_explore.isalpha():
 			index_list = list_alphabet.index(char_to_explore)
 			decode_index = index_list + int(advancekey)
+			if(decode_index>(len(list_alphabet)-1)):
+			    decode_index=decode_index-(len(list_alphabet)-1)-1
 			decoded_string = decoded_string + list_alphabet[decode_index]
 		elif char_to_explore.isdigit():
 			index_list = list_number.index(char_to_explore)
 			decode_index = index_list + int(advancekey)
+			if(decode_index>(len(list_number)-1)):
+			    decode_index=decode_index-(len(list_number)-1)-1
 			decoded_string = decoded_string + list_number[decode_index]
 		length_iterator = length_iterator + 1
 
